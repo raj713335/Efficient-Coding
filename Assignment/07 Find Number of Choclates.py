@@ -1,4 +1,4 @@
-
+"""
 listx = [0 for i in range(0, 10**5)]
 
 for K in range(0, int(input())):
@@ -16,6 +16,8 @@ for i in range(0, len(listx)):
         indi = i
 
 print(indi+1, max)
+"""
+
 
 #     X, Y = list(map(int, input().split(" ")))
 #
@@ -42,3 +44,30 @@ print(indi+1, max)
 1 2
 """
 #5 4
+
+
+
+from collections import defaultdict
+
+def solve():
+    N,A,nsweets,nstudents,sum=int(input()),defaultdict(lambda:0),0,0,0
+
+    for i in range(N):
+
+        l,r=map(int,input().split(" "))
+
+        A[l]+=1
+
+        A[r+1]+=-1
+
+    for k,v in sorted(A.items()):
+
+        sum+=v
+
+        if(sum>nstudents):
+
+            nsweets,nstudents=k,sum
+
+    return nsweets,nstudents
+
+print(*solve())
