@@ -19,6 +19,25 @@ print(indi+1, max)
 """
 
 
+"""
+from collections import defaultdict
+listx = defaultdict(lambda:0)
+for K in range(0, int(input())):
+    X, Y = list(map(int, input().split(" ")))
+    listx[X] += 1
+    listx[Y+1] -= 1
+max = sum = 0
+indi= 0
+
+for i,val in sorted(listx.items()):
+    sum += val
+    if sum > max:
+        max = sum
+        indi = i
+print(indi, max)
+"""
+
+
 #     X, Y = list(map(int, input().split(" ")))
 #
 #     for j in range(X, Y+1):
